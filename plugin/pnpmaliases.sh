@@ -39,4 +39,4 @@ function pphelp() {
     echo -e "  $(magenta "ppupr") $(grey "|") pnpm update recursive           $(grey "|") \`$(green "pnpm update -r")\`    "
 }
 
-wjshHelpInfo "PNPM Shorthands" "pphelp"
+wjutils_helpinfo "PNPM Shorthands" "pphelp"

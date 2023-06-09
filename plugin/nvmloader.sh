@@ -4,10 +4,13 @@ function nvmi() {
 
   DO_INSTALL=0
   if ! command -v nvm >/dev/null 2>&1; then
+    wjutils_warn "NVM not installed."
     DO_INSTALL=1
   elif [ "v$(nvm --version)" != "$NVM_VERSION_TAG" ]; then
+    wjutils_warn "NVM is out of date. (v$(nvm --version) vs $NVM_VERSION_TAG)"
     DO_INSTALL=1
   elif [ "$1" == "-f" ]; then
+    wjutils_warn "Forcing NVM update."
     DO_INSTALL=1
   fi
 
@@ -16,8 +19,7 @@ function nvmi() {
     nvmsetup
     wjutils_success "Now using: nvm v$(nvm --version)"
   else
-    wjutils_success "NVM is up to date. (v$(nvm --version))"
-    wjutils_info "To force an update, use \`-f\`."
+    wjutils_success "NVM is up to date (v$(nvm --version)). To force an update, use \`nvmi -f\`."
   fi
 
 }
@@ -28,8 +30,5 @@ function nvmsetup() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
 
-if ! command -v nvm >/dev/null 2>&1; then
-  nvmi
-else
-  nvmsetup
-fi
+nvmsetup
+nvmi

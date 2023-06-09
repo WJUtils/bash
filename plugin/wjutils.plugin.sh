@@ -5,10 +5,6 @@ WJUTILS="$OSH_CUSTOM/plugins/wjutils"
 source "$WJUTILS/colors.sh"
 source "$WJUTILS/uninstall.sh"
 
-function wjshHelpInfo() {
-  echo -e "$(cyan "[wj.sh]:") Loaded $1 (run \`$(green $2)\` for more info)"
-}
-
 function wjutils_err() {
   echo -e "$(red "[WJUtils]") $1"
 }
@@ -65,21 +61,24 @@ else
   WJUTILS_COLOR=1
 fi
 
+if [[ ! $WJU_DISABLE =~ " nvmload " ]]; then
+  source "$WJUTILS/nvmloader.sh"
+fi
+
+if [[ ! $WJU_DISABLE =~ " nodeload " ]]; then
+  source "$WJUTILS/nodeloader.sh"
+fi
+
+if [[ ! $WJU_DISABLE =~ " pnpmload " ]]; then
+  source "$WJUTILS/pnpmloader.sh"
+fi
+if [[ ! $WJU_DISABLE =~ " pnpm " ]]; then
+  source "$WJUTILS/pnpmaliases.sh"
+fi
+
 if [[ ! $WJU_DISABLE =~ " git " ]]; then
   source "$WJUTILS/gitaliases.sh"
 fi
 if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
   source "$WJUTILS/gitmojialiases.sh"
-fi
-if [[ ! $WJU_DISABLE =~ " nodeload " ]]; then
-  source "$WJUTILS/nodeloader.sh"
-fi
-if [[ ! $WJU_DISABLE =~ " nvmload " ]]; then
-  source "$WJUTILS/nvmloader.sh"
-fi
-if [[ ! $WJU_DISABLE =~ " pnpm " ]]; then
-  source "$WJUTILS/pnpmaliases.sh"
-fi
-if [[ ! $WJU_DISABLE =~ " pnpmload " ]]; then
-  source "$WJUTILS/pnpmloader.sh"
 fi

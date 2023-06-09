@@ -33,4 +33,4 @@ function gthelp() {
   echo -e "  $(magenta "gtmjc") $(grey "|") gitmoji -c    $(grey "|") \`$(green "gitmoji -c")\`                          "
 }
 
-wjshHelpInfo "Git Shorthands" "gthelp"
+wjutils_helpinfo "Git Shorthands" "gthelp"
