@@ -43,13 +43,13 @@ function wjutilshelp() {
   echo ""
   echo "| Value      | Description                                                                |"
   echo "| ---------- | -------------------------------------------------------------------------- |"
-  echo "| \`color\`    | Effects if command outputs (**not** aliases) will be colored.            |"
-  echo "| \`git\`      | Effects whether the Git aliases are enabled.                             |"
-  echo "| \`gitmoji\`  | Effects whether the Gitmoji aliases are enabled.                         |"
-  echo "| \`nodeload\` | Effect whether the Node Loader will load the Node version.               |"
-  echo "| \`nvmload\`  | Effect whether the NVM Loader will update/install NVM.                   |"
-  echo "| \`pnpm\`     | Effects whether the PNPM aliases are enabled.                            |"
-  echo "| \`pnpmload\` | Effects whether the PNPM Loader will update/install PNPM.                |"
+  echo "| \`color\`    | Effects if command outputs (**not** aliases) will be colored.              |"
+  echo "| \`git\`      | Effects whether the Git aliases are enabled.                               |"
+  echo "| \`gitmoji\`  | Effects whether the Gitmoji aliases are enabled.                           |"
+  echo "| \`nodeload\` | Effect whether the Node Loader will load the Node version.                 |"
+  echo "| \`nvmload\`  | Effect whether the NVM Loader will update/install NVM.                     |"
+  echo "| \`pnpm\`     | Effects whether the PNPM aliases are enabled.                              |"
+  echo "| \`pnpmload\` | Effects whether the PNPM Loader will update/install PNPM.                  |"
 }
 
 # why be smart when a dumb thing works?
