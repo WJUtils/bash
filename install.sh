@@ -21,7 +21,7 @@ files=(
 # $1 path relative to plugin install dir
 # $2 set to prevent mkdir
 function resolve_localdir() {
-  LOCAL_DIR="$OSH/custom/plugins/wjutils/$1"
+  LOCAL_DIR="$OSH_CUSTOM/plugins/wjutils/$1"
   if [ -z "$2" ]; then
     mkdir -p "${LOCAL_DIR%/*}"
   fi
