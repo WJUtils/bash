@@ -33,3 +33,7 @@ function wjutilsremove() {
     wjutils_err "\t(expected: $PLUGIN_DIR)"
   fi
 }
+
+function wjutilsupdate() {
+  bash -c "$(curl -fsSL "https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh")"
+}
