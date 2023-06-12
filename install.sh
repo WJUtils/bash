@@ -7,6 +7,7 @@ files=(
   nvmloader.sh
   uninstall.sh
   wjutils.plugin.sh
+  gitutils.sh
   gitmojialiases.sh
   pnpmloader.sh
   gitaliases.sh
