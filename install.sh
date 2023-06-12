@@ -18,10 +18,16 @@ files=(
 # This installer is incapable of dealing with nested directories.
 # Do not use nested directories in the `./plugin` directory.
 
+INSTALL_DIR=$(echo "$OSH_CUSTOM" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+if [ -z "$INSTALL_DIR" ]; then
+  INSTALL_DIR="$OSH/custom"
+fi
+INSTALL_DIR="$INSTALL_DIR/plugins/wjutils"
+
 # $1 path relative to plugin install dir
 # $2 set to prevent mkdir
 function resolve_localdir() {
-  LOCAL_DIR="$OSH_CUSTOM/plugins/wjutils/$1"
+  LOCAL_DIR="$INSTALL_DIR/$1"
   if [ -z "$2" ]; then
     mkdir -p "${LOCAL_DIR%/*}"
   fi
