@@ -45,15 +45,15 @@ function wjutilshelp() {
   echo ""
   echo "The recognised values are:"
   echo ""
-  echo "$(cyan "│") Value    $(cyan "│") Description                                                   $(cyan "│")"
-  echo "$(cyan "├──────────┼───────────────────────────────────────────────────────────────┤")"
-  echo "$(cyan "│") $(magenta "color")    $(cyan "│") Effects if command outputs (**not** aliases) will be colored. $(cyan "│")"
-  echo "$(cyan "│") $(magenta "git")      $(cyan "│") Effects whether the Git aliases are enabled.                  $(cyan "│")"
-  echo "$(cyan "│") $(magenta "gitmoji")  $(cyan "│") Effects whether the Gitmoji aliases are enabled.              $(cyan "│")"
-  echo "$(cyan "│") $(magenta "nodeload") $(cyan "│") Effect whether the Node Loader will load the Node version.    $(cyan "│")"
-  echo "$(cyan "│") $(magenta "nvmload")  $(cyan "│") Effect whether the NVM Loader will update/install NVM.        $(cyan "│")"
-  echo "$(cyan "│") $(magenta "pnpm")     $(cyan "│") Effects whether the PNPM aliases are enabled.                 $(cyan "│")"
-  echo "$(cyan "│") $(magenta "pnpmload") $(cyan "│") Effects whether the PNPM Loader will update/install PNPM.     $(cyan "│")"
+  echo "│ Value    │ Description                                                   │"
+  echo "├──────────┼───────────────────────────────────────────────────────────────┤"
+  echo "│ $(blue "color")    │ Effects if command outputs (**not** aliases) will be colored. │"
+  echo "│ $(blue "git")      │ Effects whether the Git aliases are enabled.                  │"
+  echo "│ $(blue "gitmoji")  │ Effects whether the Gitmoji aliases are enabled.              │"
+  echo "│ $(blue "nodeload") │ Effect whether the Node Loader will load the Node version.    │"
+  echo "│ $(blue "nvmload")  │ Effect whether the NVM Loader will update/install NVM.        │"
+  echo "│ $(blue "pnpm")     │ Effects whether the PNPM aliases are enabled.                 │"
+  echo "│ $(blue "pnpmload") │ Effects whether the PNPM Loader will update/install PNPM.     │"
 }
 
 # why be smart when a dumb thing works?
@@ -88,4 +88,3 @@ if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
 fi
 
 wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."
-wjutilshelp
