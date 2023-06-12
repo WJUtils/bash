@@ -82,3 +82,5 @@ fi
 if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
   source "$WJUTILS/gitmojialiases.sh"
 fi
+
+wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."
