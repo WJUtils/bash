@@ -62,7 +62,11 @@ for file in "${files[@]}"; do
   FILE_CONTENTS_MAP[$file]=$(addfile "$file")
 done
 
-echo -e "\x1b[36m[WJUtils]\x1b[0m Installing WJUtils..."
+if [ -z "$UPDATE" ]; then
+  echo -e "\x1b[36m[WJUtils]\x1b[0m Installing WJUtils..."
+else
+  echo -e "\x1b[36m[WJUtils]\x1b[0m Updating WJUtils..."
+fi
 for key in "${!FILE_CONTENTS_MAP[@]}"; do
   echo "${FILE_CONTENTS_MAP[$key]}" >|$(resolve_localdir "$key")
 done
@@ -76,12 +80,15 @@ for file in $(find $(resolve_localdir "" 1) -type f); do
 done
 
 echo -e "\x1b[36m[WJUtils]\x1b[0m WJUtils - Bash successfully installed!"
-echo -e "\x1b[36m[WJUtils]\x1b[0m To use this plugin, you must enable it in your .bashrc file:"
-echo -e "\t~ ..."
-echo -e "\t~ plugins=("
-echo -e "\t~ \ttfoo"
-echo -e "\t~ \ttbar"
-echo -e "\t\x1b[32m+ \twjutils\x1b[0m"
-echo -e "\t~ )"
-echo -e "\t~ ..."
-echo -e "\x1b[36m[WJUtils]\x1b[0m Run \`\x1b[35mwjutilshelp\x1b[0m\` for info on how to configure and use this plugin."
+if [ -z "$UPDATE" ]; then
+  echo -e "\x1b[36m[WJUtils]\x1b[0m To use this plugin, you must enable it in your .bashrc file:"
+  echo -e "\t~ ..."
+  echo -e "\t~ plugins=("
+  echo -e "\t~ \ttfoo"
+  echo -e "\t~ \ttbar"
+  echo -e "\t\x1b[32m+ \twjutils\x1b[0m"
+  echo -e "\t~ )"
+  echo -e "\t~ ..."
+  echo -e "\x1b[36m[WJUtils]\x1b[0m Run \`\x1b[35mwjutilshelp\x1b[0m\` for info on how to configure and use this plugin."
+fi
+echo -e "\x1b[36m[WJUtils]\x1b[0m You will need to reload your terminal(s) to load WJUtils."

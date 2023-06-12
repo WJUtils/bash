@@ -35,5 +35,5 @@ function wjutilsremove() {
 }
 
 function wjutilsupdate() {
-  bash -c "$(curl -fsSL "https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh")"
+  UPDATE=1 bash -c "$(curl -fsSL "https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh")"
 }
