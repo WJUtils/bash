@@ -29,8 +29,6 @@ function gthelp() {
   echo -e "  $(magenta "gtl")   $(grey "|") git log       $(grey "|") \`$(green "git log")\`                             "
   echo -e "  $(magenta "gtb")   $(grey "|") git branch    $(grey "|") \`$(green "git branch")\`                          "
   echo -e "  $(magenta "gtch")  $(grey "|") git checkout  $(grey "|") \`$(green "git checkout")\`                        "
-  echo -e "  $(magenta "gtmj")  $(grey "|") gitmoji       $(grey "|") \`$(green "gitmoji")\`                             "
-  echo -e "  $(magenta "gtmjc") $(grey "|") gitmoji -c    $(grey "|") \`$(green "gitmoji -c")\`                          "
 }
 
 wjutils_helpinfo "Git Shorthands" "gthelp"
