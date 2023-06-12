@@ -59,7 +59,8 @@ function gtbs() {
 
 function gtuhelp() {
   echo -e "Git utility commands"
-  echo -e "\t$(blue "gtbs")\tInteractively create a new branch"
+  echo -e "  $(blue "gtbs") │ Interactively create a new branch"
+
 }
 
 wjutils_helpinfo "Git Utilities" "gtuhelp"
