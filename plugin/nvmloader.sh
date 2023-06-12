@@ -16,7 +16,7 @@ function nvmi() {
 
   if [ $DO_INSTALL -eq 1 ]; then
     wjutils_info "Downloading latest NVM..."
-    bash -c "$(curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION_TAG/install.sh")" >/dev/null 2>&1
+    PROFILE=/dev/null bash -c "$(curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION_TAG/install.sh")" >/dev/null 2>&1
     nvmsetup
     wjutils_success "Now using: nvm v$(nvm --version)"
   else
