@@ -49,6 +49,7 @@ function wjutilshelp() {
   echo "├──────────┼───────────────────────────────────────────────────────────────┤"
   echo "│ $(blue "color")    │ Effects if command outputs (**not** aliases) will be colored. │"
   echo "│ $(blue "git")      │ Effects whether the Git aliases are enabled.                  │"
+  echo "│ $(blue "gitutils") │ Effects whether the Git utility commands are enabled.         │"
   echo "│ $(blue "gitmoji")  │ Effects whether the Gitmoji aliases are enabled.              │"
   echo "│ $(blue "nodeload") │ Effect whether the Node Loader will load the Node version.    │"
   echo "│ $(blue "nvmload")  │ Effect whether the NVM Loader will update/install NVM.        │"
@@ -85,6 +86,9 @@ if [[ ! $WJU_DISABLE =~ " git " ]]; then
 fi
 if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
   source "$INSTALL_DIR/gitmojialiases.sh"
+fi
+if [[ ! $WJU_DISABLE =~ " gitutils " ]]; then
+  source "$INSTALL_DIR/gitutils.sh"
 fi
 
 wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."
