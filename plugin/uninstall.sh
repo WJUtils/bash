@@ -6,31 +6,31 @@ function wjutilsremove() {
 
     if [ "$RESPONSE" == "y" ] || [ "$RESPONSE" == "Y" ]; then
 
-      wjutils_info "Uninstalling WJUtils..."
+      __wjutils_info "Uninstalling WJUtils..."
 
       rm -rf "$PLUGIN_DIR"
-      wjutils_success "WJUtils successfully removed!"
-      wjutils_info "If this was a mistake, the following command should restore your installation:"
-      wjutils_info "\tbash -c \"\$(curl -fsSL \"https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh\")\""
-      wjutils_info "Make sure to remove WJUtils from your plugins list in your .bashrc file:"
-      wjutils_info "\t~ ..."
-      wjutils_info "\t~ plugins=("
-      wjutils_info "\t~ \tfoo"
-      wjutils_info "\t~ \tbar"
-      wjutils_info "\t$(red "- \twjutils")"
-      wjutils_info "\t~ )"
-      wjutils_info "\t~ ..."
-      wjutils_info "You should also remove the WJU_DISABLE variable from your .bashrc file if you set it."
-      wjutils_info "You will need to reload your terminal(s) to unload WJUtils."
+      __wjutils_success "WJUtils successfully removed!"
+      __wjutils_info "If this was a mistake, the following command should restore your installation:"
+      __wjutils_info "\tbash -c \"\$(curl -fsSL \"https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh\")\""
+      __wjutils_info "Make sure to remove WJUtils from your plugins list in your .bashrc file:"
+      __wjutils_info "\t~ ..."
+      __wjutils_info "\t~ plugins=("
+      __wjutils_info "\t~ \tfoo"
+      __wjutils_info "\t~ \tbar"
+      __wjutils_info "\t$(red "- \twjutils")"
+      __wjutils_info "\t~ )"
+      __wjutils_info "\t~ ..."
+      __wjutils_info "You should also remove the WJU_DISABLE variable from your .bashrc file if you set it."
+      __wjutils_info "You will need to reload your terminal(s) to unload WJUtils."
     else
-      wjutils_info "Okay, will not uninstall."
+      __wjutils_info "Okay, will not uninstall."
     fi
   else
-    wjutils_err "Could not find WJUtils installation. Has it been moved?"
+    __wjutils_err "Could not find WJUtils installation. Has it been moved?"
     SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-    wjutils_err "This uninstall script is currently located at:"
-    wjutils_err "\t$SCRIPT_DIR"
-    wjutils_err "\t(expected: $PLUGIN_DIR)"
+    __wjutils_err "This uninstall script is currently located at:"
+    __wjutils_err "\t$SCRIPT_DIR"
+    __wjutils_err "\t(expected: $PLUGIN_DIR)"
   fi
 }
 

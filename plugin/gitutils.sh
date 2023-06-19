@@ -61,4 +61,4 @@ function gtuhelp() {
 
 }
 
-wjutils_helpinfo "Git Utilities" "gtuhelp"
+__wjutils_helpinfo "Git Utilities" "gtuhelp"

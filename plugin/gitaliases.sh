@@ -42,4 +42,4 @@ function gthelp() {
   echo -e "  $(blue "gtch") │ git checkout  │ \`$(green "git checkout")\`                        "
 }
 
-wjutils_helpinfo "Git Shorthands" "gthelp"
+__wjutils_helpinfo "Git Shorthands" "gthelp"

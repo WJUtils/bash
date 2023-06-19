@@ -9,24 +9,24 @@ INSTALL_DIR="$INSTALL_DIR/plugins/wjutils"
 source "$INSTALL_DIR/colors.sh"
 source "$INSTALL_DIR/uninstall.sh"
 
-function wjutils_err() {
+function __wjutils_err() {
   echo -e "$(red "(✘)[WJUtils]") $1"
 }
 
-function wjutils_warn() {
+function __wjutils_warn() {
   echo -e "$(yellow "(!)[WJUtils]") $1"
 }
 
-function wjutils_info() {
+function __wjutils_info() {
   echo -e "$(cyan "(i)[WJUtils]") $1"
 }
 
-function wjutils_success() {
+function __wjutils_success() {
   echo -e "$(green "(✔)[WJUtils]") $1"
 }
 
-function wjutils_helpinfo() {
-  wjutils_info "Loaded $1 (run \`$(green $2)\` for more info)"
+function __wjutils_helpinfo() {
+  __wjutils_info "Loaded $1 (run \`$(green $2)\` for more info)"
 }
 
 function wjutilshelp() {
@@ -91,4 +91,4 @@ if [[ ! $WJU_DISABLE =~ " gitutils " ]]; then
   source "$INSTALL_DIR/gitutils.sh"
 fi
 
-wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."
+__wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."

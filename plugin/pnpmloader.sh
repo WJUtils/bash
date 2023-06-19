@@ -1,8 +1,8 @@
 function ppcp() {
-  wjutils_info "Ensuring PNPM version..."
+  __wjutils_info "Ensuring PNPM version..."
   corepack enable >&/dev/null
   corepack prepare pnpm@latest --activate >&/dev/null
-  wjutils_success "Now using: pnpm $(pnpm --version)"
+  __wjutils_success "Now using: pnpm $(pnpm --version)"
 }
 
 ppcp

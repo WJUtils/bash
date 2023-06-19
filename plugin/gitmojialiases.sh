@@ -7,4 +7,4 @@ function gtmjhelp() {
   echo -e "  $(blue "gtmjc") │ gitmoji -c    │ \`$(green "gitmoji -c")\`                          "
 }
 
-wjutils_helpinfo "Gitmoji Shorthands" "gtmjhelp"
+__wjutils_helpinfo "Gitmoji Shorthands" "gtmjhelp"
