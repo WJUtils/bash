@@ -18,9 +18,9 @@ function nvmi() {
     __wjutils_info "Downloading latest NVM..."
     PROFILE=/dev/null bash -c "$(curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION_TAG/install.sh")" >/dev/null 2>&1
     __wjutils_nvmsetup
-    __wjutils_success "Now using: nvm v$(green "$(nvm --version)"). \tTo check again for updates, use \`$(blue "nvmi")\`."
+    __wjutils_success "Now using: nvm v$(green "$(nvm --version)").\tTo check again for updates, use \`$(blue "nvmi")\`."
   else
-    __wjutils_success "NVM is up to date (v$(green "$(nvm --version)")).\tTo force an update, use \`$(blue "nvmi -f")\`."
+    __wjutils_success "Now using: nvm v$(green "$(nvm --version)").\tTo force an update, use \`$(blue "nvmi -f")\`."
   fi
 
 }
