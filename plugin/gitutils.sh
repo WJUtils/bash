@@ -1,5 +1,3 @@
-source /media/willsterjohnson/NVMe250/\$GITHUB/@WJUTILS/BASH/plugin/colors.sh
-
 # TODO: user configurable types?
 
 function gtbs() {
