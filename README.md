@@ -61,17 +61,19 @@ convenient.
 
 > Config: `nodeload`
 
+**Recommended: some WJU bash features rely on JSON and will not work without**
+**Node.**
+
 The Node loader is intended for combined use with the [NVM Loader](#nvm-loader).
 It will use NVM to install a version of Node.
 
 If available, it will use the version provided in the `.nvmrc` file. If this
-file is not available, it will use the latest LTS version of Node.
+file is not available, it will use the newest version permitted by
+the local `package.json` `engines.node` field. If there is no `package.json`, or
+if it has no `engines.node` field, it will use the latest LTS version of Node.
 
 You can re-run this task without restarting your terminal by running `nvmu`.
 
-\* _If you know how to read and process JSON in bash, the ability to use the_
-_latest Node version permitted by the `package.json` as a fallback for `.nvmrc`_
-_before defaulting to LTS would be very useful. PRs welcome!_
 
 ### NVM Loader
 

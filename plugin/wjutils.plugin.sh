@@ -1,13 +1,13 @@
 #! bash oh-my-bash.module
 
-INSTALL_DIR=$(echo "$OSH_CUSTOM" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
-if [ -z "$INSTALL_DIR" ]; then
-  INSTALL_DIR="$OSH/custom"
+__WJUTILS_INSTALL_DIR=$(echo "$OSH_CUSTOM" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+if [ -z "$__WJUTILS_INSTALL_DIR" ]; then
+  __WJUTILS_INSTALL_DIR="$OSH/custom"
 fi
-INSTALL_DIR="$INSTALL_DIR/plugins/wjutils"
+__WJUTILS_INSTALL_DIR="$__WJUTILS_INSTALL_DIR/plugins/wjutils"
 
-source "$INSTALL_DIR/colors.sh"
-source "$INSTALL_DIR/uninstall.sh"
+source "$__WJUTILS_INSTALL_DIR/colors.sh"
+source "$__WJUTILS_INSTALL_DIR/uninstall.sh"
 
 function __wjutils_err() {
   echo -e "$(red "(✘)[WJUtils]") $1"
@@ -57,6 +57,28 @@ function wjutilshelp() {
   echo "│ $(blue "pnpmload") │ Effects whether the PNPM Loader will update/install PNPM.     │"
 }
 
+# $1 is the subcommand
+# $2 is the keychain
+# $3 is the filepath (optional)
+function __wjutils_json_read() {
+  echo "$(node "$__WJUTILS_INSTALL_DIR/json.mjs" "read" "$1" "$2" "$3" 2>/dev/null)"
+}
+
+# $1 is the subcommand
+# $2 is the keychain
+# $3 is the filepath (optional)
+function __wjutils_json_readliteral() {
+  echo "$(node "$__WJUTILS_INSTALL_DIR/json.mjs" "readliteral" "$1" "$2" "$3" 2>/dev/null)"
+}
+
+# $1 is the subcommand
+# $2 is the keychain
+# $3 is the value
+# $4 is the filepath (optional)
+function __wjutils_json_write() {
+  echo "$(node "$__WJUTILS_INSTALL_DIR/json.mjs" "write" "$1" "$2" "$3" "$4" 2>/dev/null)"
+}
+
 # why be smart when a dumb thing works?
 WJU_DISABLE=" $WJU_DISABLE "
 
@@ -67,28 +89,28 @@ else
 fi
 
 if [[ ! $WJU_DISABLE =~ " nvmload " ]]; then
-  source "$INSTALL_DIR/nvmloader.sh"
+  source "$__WJUTILS_INSTALL_DIR/nvmloader.sh"
 fi
 
 if [[ ! $WJU_DISABLE =~ " nodeload " ]]; then
-  source "$INSTALL_DIR/nodeloader.sh"
+  source "$__WJUTILS_INSTALL_DIR/nodeloader.sh"
 fi
 
 if [[ ! $WJU_DISABLE =~ " pnpmload " ]]; then
-  source "$INSTALL_DIR/pnpmloader.sh"
+  source "$__WJUTILS_INSTALL_DIR/pnpmloader.sh"
 fi
 if [[ ! $WJU_DISABLE =~ " pnpm " ]]; then
-  source "$INSTALL_DIR/pnpmaliases.sh"
+  source "$__WJUTILS_INSTALL_DIR/pnpmaliases.sh"
 fi
 
 if [[ ! $WJU_DISABLE =~ " git " ]]; then
-  source "$INSTALL_DIR/gitaliases.sh"
+  source "$__WJUTILS_INSTALL_DIR/gitaliases.sh"
 fi
 if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
-  source "$INSTALL_DIR/gitmojialiases.sh"
+  source "$__WJUTILS_INSTALL_DIR/gitmojialiases.sh"
 fi
 if [[ ! $WJU_DISABLE =~ " gitutils " ]]; then
-  source "$INSTALL_DIR/gitutils.sh"
+  source "$__WJUTILS_INSTALL_DIR/gitutils.sh"
 fi
 
 __wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."
