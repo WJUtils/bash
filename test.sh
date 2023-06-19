@@ -2,7 +2,7 @@ echo "[TEST]: building installer"
 bash ./build_installer.sh
 
 echo "[TEST]: running installer"
-bash ./install.sh
+bash ./install.sh --local
 
 echo "[TEST]: listing files"
 

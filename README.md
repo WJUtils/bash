@@ -140,10 +140,32 @@ You can re-run this task without restarting your terminal by running `ppcp`.
 > MacOS users: your results may vary. Feel free to test and contribute, MacOS
 > support would be very welcome.
 
-First, ensure you have [OhMyBash] installed. Then, run the following command:
+Ensure you have [OhMyBash] installed.
+
+### Install with `curl`
+
+Install/Update:
 
 ```bash
 bash -c "$(curl -fsSL "https://raw.githubusercontent.com/wjutils/bash/trunk/install.sh")"
+```
+
+### Install from Source
+
+Install:
+
+```bash
+git clone git@github.com:WJUtils/bash path/to/copy
+cd path/to/copy
+bash install.sh --local
+```
+
+Update:
+
+```bash
+cd path/to/copy
+git pull
+bash install.sh --local
 ```
 
 ## Configuration
