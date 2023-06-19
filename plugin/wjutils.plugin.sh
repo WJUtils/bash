@@ -26,7 +26,7 @@ function __wjutils_success() {
 }
 
 function __wjutils_helpinfo() {
-  __wjutils_info "Loaded $1 (run \`$(green $2)\` for more info)"
+  __wjutils_info "Loaded $1\t(run \`$(blue $2)\` for more info)"
 }
 
 function wjutilshelp() {

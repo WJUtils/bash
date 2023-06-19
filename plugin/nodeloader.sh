@@ -7,7 +7,7 @@ function nvmu() {
     nvm install --lts >&/dev/null
     nvm use --lts >&/dev/null
   }
-  __wjutils_success "Now using: node $(node --version)"
+  __wjutils_success "Now using: node $(green "$(node --version)").\tTo re-ensure Node version, run \`$(blue "nvmu")\` again."
 }
 
 nvmu

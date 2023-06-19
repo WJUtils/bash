@@ -7,7 +7,7 @@ function nvmi() {
     __wjutils_warn "NVM not installed."
     DO_INSTALL=1
   elif [ "v$(nvm --version)" != "$NVM_VERSION_TAG" ]; then
-    __wjutils_warn "NVM is out of date. (v$(nvm --version) vs $NVM_VERSION_TAG)"
+    __wjutils_warn "NVM is out of date. (v$(green "$(nvm --version)") vs $(green "$NVM_VERSION_TAG"))"
     DO_INSTALL=1
   elif [ "$1" == "-f" ]; then
     __wjutils_warn "Forcing NVM update."
@@ -18,9 +18,9 @@ function nvmi() {
     __wjutils_info "Downloading latest NVM..."
     PROFILE=/dev/null bash -c "$(curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION_TAG/install.sh")" >/dev/null 2>&1
     __wjutils_nvmsetup
-    __wjutils_success "Now using: nvm v$(nvm --version)"
+    __wjutils_success "Now using: nvm v$(green "$(nvm --version)"). \tTo check again for updates, use \`$(blue "nvmi")\`."
   else
-    __wjutils_success "NVM is up to date (v$(nvm --version)). To force an update, use \`nvmi -f\`."
+    __wjutils_success "NVM is up to date (v$(green "$(nvm --version)")).\tTo force an update, use \`$(blue "nvmi -f")\`."
   fi
 
 }
