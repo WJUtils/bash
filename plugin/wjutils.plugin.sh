@@ -1,6 +1,6 @@
 #! bash oh-my-bash.module
 
-__WJUTILS_INSTALL_DIR=$(echo "$OSH_CUSTOM" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+export __WJUTILS_INSTALL_DIR=$(echo "$OSH_CUSTOM" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
 if [ -z "$__WJUTILS_INSTALL_DIR" ]; then
   __WJUTILS_INSTALL_DIR="$OSH/custom"
 fi
@@ -111,6 +111,10 @@ if [[ ! $WJU_DISABLE =~ " gitmoji " ]]; then
 fi
 if [[ ! $WJU_DISABLE =~ " gitutils " ]]; then
   source "$__WJUTILS_INSTALL_DIR/gitutils.sh"
+fi
+
+if [[ ! $WJU_DISABLE =~ " misc " ]]; then
+  source "$__WJUTILS_INSTALL_DIR/_misc.sh"
 fi
 
 __wjutils_info "Until an auto-update script is added, check https://github.com/WJUtils/bash for updates."

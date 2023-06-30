@@ -74,7 +74,6 @@ if it has no `engines.node` field, it will use the latest LTS version of Node.
 
 You can re-run this task without restarting your terminal by running `nvmu`.
 
-
 ### NVM Loader
 
 > Config: `nvmload`
@@ -130,6 +129,17 @@ not already installed.
 
 You can re-run this task without restarting your terminal by running `ppcp`.
 
+### Miscellanous Utilities
+
+> Config: `misc`
+
+The miscellanous utilities are a collection of unrelated commands which aren't
+large enough to warrant their own category.
+
+| Command | Description                                                               |
+| ------- | ------------------------------------------------------------------------- |
+| `copy`  | Copy the first arg, or piped content, to the clipboard (requires `xclip`) |
+
 ## Installation
 
 > Windows users: to use WJUtils bash, you will need to install
@@ -178,24 +188,27 @@ like a class in HTML.
 Examples:
 
 ```bash
-# disable the NVM Loader's update/install, all git/gitmoji aliases, surpress colored outputs
-WJU_DISABLE="nvminstall git color"
-# disable all NVM Loader functionality, gitmoji aliases, and pnpm aliases
-WJU_DISABLE="nvm gitmoji pnpm"
+# disable the NVM Loader's update/install, all git/gitmoji aliases (not utils), surpress colored outputs
+WJU_DISABLE="nvm nvmload git gitmoji color"
+# disable all NVM Loader functionality, gitmoji aliases (not git, not utils), and pnpm aliases
+WJU_DISABLE="nvm nvmload gitmoji pnpm"
+# disable all automatic loaders/installers
+WJU_DISABLE="nodeload nvm nvmload pnpm pnpmload"
 ```
 
 The recognised values are:
 
-| Value      | Description                                                                |
-| ---------- | -------------------------------------------------------------------------- |
-| `color`    | Effects if command outputs (**not** aliases) will be colored.              |
-| `git`      | Effects whether the [Git aliases](#git-aliases) are enabled.               |
-| `gitmoji`  | Effects whether the [Gitmoji aliases](#gitmoji-aliases) are enabled.       |
-| `gitutils` | Effects whether the Git utility commands are enabled.                      |
-| `nodeload` | Effect whether the [Node Loader](#node-loader) will load the Node version. |
-| `nvmload`  | Effect whether the [NVM Loader](#nvm-loader) will update/install NVM.      |
-| `pnpm`     | Effects whether the [PNPM aliases](#pnpm-aliases) are enabled.             |
-| `pnpmload` | Effects whether the [PNPM Loader](#pnpm-loader) will update/install PNPM.  |
+| Value      | Description                                                                        |
+| ---------- | ---------------------------------------------------------------------------------- |
+| `color`    | Effects if command outputs (**not** aliases) will be colored.                      |
+| `git`      | Effects whether the [Git aliases](#git-aliases) are enabled.                       |
+| `gitmoji`  | Effects whether the [Gitmoji aliases](#gitmoji-aliases) are enabled.               |
+| `gitutils` | Effects whether the [Git Utilities](#git-utilities) are enabled.                   |
+| `nodeload` | Effect whether the [Node Loader](#node-loader) will load the Node version.         |
+| `nvmload`  | Effect whether the [NVM Loader](#nvm-loader) will update/install NVM.              |
+| `pnpm`     | Effects whether the [PNPM aliases](#pnpm-aliases) are enabled.                     |
+| `pnpmload` | Effects whether the [PNPM Loader](#pnpm-loader) will update/install PNPM.          |
+| `misc`     | Effects whether the [miscellanous utilities](#miscellanous-utilities) are enabled. |
 
 [OhMyBash]: https://github.com/ohmybash/oh-my-bash
 [WSL]: https://learn.microsoft.com/en-us/windows/wsl/install
