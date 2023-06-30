@@ -25,6 +25,7 @@ LOCAL_MODE=0
 if [ "$1" == "--local" ]; then
   LOCAL_MODE=1
   echo -e "\x1b[36m[WJUtils]\x1b[0m Running in local mode."
+else
   echo -e "\x1b[36m[WJUtils]\x1b[0m WJUtils will be installed from the git repository at $(pwd)"
 fi
 
@@ -34,6 +35,14 @@ if [ -z "$INSTALL_DIR" ]; then
 fi
 INSTALL_DIR="$INSTALL_DIR/plugins/wjutils"
 
+# $1 is the content to echo
+function echo_network_only() {
+  if [ "$1" == "--local" ]; then
+    :
+  else
+    echo -e "$1"
+  fi
+}
 # $1 path relative to plugin install dir
 # $2 set to prevent mkdir
 function resolve_localdir() {
@@ -70,7 +79,7 @@ fi
 
 declare -A FILE_CONTENTS_MAP
 
-echo -e "\x1b[36m[WJUtils]\x1b[0m Downloading WJUtils..."
+echo_network_only "\x1b[36m[WJUtils]\x1b[0m Downloading WJUtils..."
 for file in "${files[@]}"; do
   FILE_CONTENTS_MAP[$file]=$(addfile "$file")
 done
@@ -97,8 +106,8 @@ if [ -z "$UPDATE" ]; then
   echo -e "\x1b[36m[WJUtils]\x1b[0m To use this plugin, you must enable it in your .bashrc file:"
   echo -e "\t~ ..."
   echo -e "\t~ plugins=("
-  echo -e "\t~ \ttfoo"
-  echo -e "\t~ \ttbar"
+  echo -e "\t~ \tfoo"
+  echo -e "\t~ \tbar"
   echo -e "\t\x1b[32m+ \twjutils\x1b[0m"
   echo -e "\t~ )"
   echo -e "\t~ ..."
