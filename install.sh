@@ -5,6 +5,7 @@ files=(
   json.mjs
   pnpmaliases.sh
   nodeloader.sh
+  _misc.sh
   nvmloader.sh
   uninstall.sh
   wjutils.plugin.sh
