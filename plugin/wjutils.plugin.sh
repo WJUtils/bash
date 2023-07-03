@@ -51,8 +51,8 @@ function wjutilshelp() {
   echo "│ $(blue "git")      │ Effects whether the Git aliases are enabled.                  │"
   echo "│ $(blue "gitutils") │ Effects whether the Git utility commands are enabled.         │"
   echo "│ $(blue "gitmoji")  │ Effects whether the Gitmoji aliases are enabled.              │"
-  echo "│ $(blue "nodeload") │ Effect whether the Node Loader will load the Node version.    │"
-  echo "│ $(blue "nvmload")  │ Effect whether the NVM Loader will update/install NVM.        │"
+  echo "│ $(blue "nodeload") │ Effects whether the Node Loader will load the Node version.    │"
+  echo "│ $(blue "nvmload")  │ Effects whether the NVM Loader will update/install NVM.        │"
   echo "│ $(blue "pnpm")     │ Effects whether the PNPM aliases are enabled.                 │"
   echo "│ $(blue "pnpmload") │ Effects whether the PNPM Loader will update/install PNPM.     │"
 }

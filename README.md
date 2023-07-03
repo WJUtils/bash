@@ -205,8 +205,8 @@ The recognised values are:
 | `git`      | Effects whether the [Git aliases](#git-aliases) are enabled.                       |
 | `gitmoji`  | Effects whether the [Gitmoji aliases](#gitmoji-aliases) are enabled.               |
 | `gitutils` | Effects whether the [Git Utilities](#git-utilities) are enabled.                   |
-| `nodeload` | Effect whether the [Node Loader](#node-loader) will load the Node version.         |
-| `nvmload`  | Effect whether the [NVM Loader](#nvm-loader) will update/install NVM.              |
+| `nodeload` | Effects whether the [Node Loader](#node-loader) will load the Node version.         |
+| `nvmload`  | Effects whether the [NVM Loader](#nvm-loader) will update/install NVM.              |
 | `pnpm`     | Effects whether the [PNPM aliases](#pnpm-aliases) are enabled.                     |
 | `pnpmload` | Effects whether the [PNPM Loader](#pnpm-loader) will update/install PNPM.          |
 | `misc`     | Effects whether the [miscellanous utilities](#miscellanous-utilities) are enabled. |
