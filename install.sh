@@ -74,6 +74,7 @@ function addfile() {
 
 if [ -z "$OSH" ]; then
   echo -e "\x1b[31m[WJUtils]\x1b[0m You must install oh-my-bash first!"
+  echo -e "\x1b[31m[WJUtils]\x1b[0m See https://github.com/ohmybash/oh-my-bash for installation instructions."
   exit 1
 fi
 
