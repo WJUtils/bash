@@ -136,9 +136,10 @@ You can re-run this task without restarting your terminal by running `ppcp`.
 The miscellanous utilities are a collection of unrelated commands which aren't
 large enough to warrant their own category.
 
-| Command | Description                                                               |
-| ------- | ------------------------------------------------------------------------- |
-| `copy`  | Copy the first arg, or piped content, to the clipboard (requires `xclip`) |
+| Command  | Description                                                               |
+| -------- | ------------------------------------------------------------------------- |
+| `copy`   | Copy the first arg, or piped content, to the clipboard (requires `xclip`) |
+| `mkcode` | Create a new directory and open it in VSCode, works as alias for `code`   |
 
 ## Installation
 
